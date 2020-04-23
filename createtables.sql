@@ -54,4 +54,4 @@ CREATE EXTERNAL TABLE IF NOT EXISTS `sensors` (`uuid` STRING, `amplitude100` DOU
 `oxidising` DOUBLE, `reducing` DOUBLE, `nh3` DOUBLE, `gasko` STRING)
 STORED AS ORC
 LOCATION '/tmp/sensors';
-
+  
