@@ -1,24 +1,38 @@
-INSERT INTO speeding_driver_alerts
-SELECT windowEnd, driverAvgSpeed.driverId, driverAvgSpeed.driverName, driverAvgSpeed.route,
-       driverAvgSpeed.driverAvgSpeed
-FROM
-(
-  SELECT TUMBLE_END(geo_events.event_time, INTERVAL '3' MINUTE) as windowEnd,
-       geo_events.driverId,geo_events.driverName,geo_events.route,
-       avg(speed_events.speed) as driverAvgSpeed
-  FROM
-    truck_geo_events as geo_events,
-    truck_speed_events as speed_events
-  where
-    geo_events.driverId = speed_events.driverId AND
-    geo_events.event_time BETWEEN 
-        speed_events.event_time - INTERVAL '1' SECOND AND 
-        speed_events.event_time + INTERVAL '1' SECOND
-  GROUP BY
-    TUMBLE(geo_events.event_time, INTERVAL '3' MINUTE),
-    geo_events.driverId,
-    geo_events.driverName,
-    geo_events.route
-) driverAvgSpeed
+INSERT INTO global_iot_events
+SELECT energy.amplitude100 , 
+energy.amplitude500 , 
+energy.amplitude1000 , 
+energy.lownoise , 
+energy.midnoise ,
+energy.highnoise , 
+energy.amps , 
+energy.ipaddress , 
+energy.host_name ,
+energy.macaddress , 
+energy.endtime , 
+energy.runtime , 
+energy.starttime , 
+energy.cpu , 
+energy.cpu_temp , 
+energy.diskusage , 
+energy.memory , 
+energy.id , 
+energy.temperature , 
+energy.adjtemp , 
+energy.adjtempf , 
+energy.temperaturef , 
+energy.pressure , 
+energy.humidity , 
+energy.lux , 
+energy.proximity , 
+energy.oxidising , 
+energy.reducing , 
+energy.nh3 , 
+energy.gasko 
+FROM energy,
+     airun,
+     scada
 WHERE
-driverAvgSpeed.driverAvgSpeed > 80;
+    energy.systemtime = airun.systemtime 
+AND
+    scada.systemtime = energy.systemtime;
