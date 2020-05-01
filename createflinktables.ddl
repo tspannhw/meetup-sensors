@@ -13,5 +13,6 @@ oxidising DOUBLE, reducing DOUBLE, nh3 DOUBLE, gasko STRING
 	'connector.topic'   	 = 'scada',
 	'connector.startup-mode' = 'earliest-offset',
 	'connector.properties.bootstrap.servers' = 'edge2ai-1.dim.local:9092',
+	'connector.properties.group.id' = 'flink-sql-scada-consumer',
 	'format.type' = 'json'
 );
