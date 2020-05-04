@@ -96,3 +96,24 @@ CREATE TABLE scada (
 	'connector.properties.group.id' = 'flink-sql-scada-consumer',
 	'format.type' = 'json'
 );
+
+CREATE TABLE airun (
+	uuid STRING, 
+	systemtime STRING,  
+	ipaddress STRING, 
+	host STRING, 
+	starttime STRING, 
+	cputemp STRING, 
+	diskusage STRING, 
+	diskfree STRING,
+	memory DOUBLE, 
+	image_filename STRING
+) WITH (
+	'connector.type'    	 = 'kafka',
+	'connector.version' 	 = 'universal',
+	'connector.topic'   	 = 'airun',
+	'connector.startup-mode' = 'earliest-offset',
+	'connector.properties.bootstrap.servers' = 'edge2ai-1.dim.local:9092',
+	'connector.properties.group.id' = 'flink-sql-airun-consumer',
+	'format.type' = 'json'
+);
