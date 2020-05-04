@@ -18,7 +18,7 @@ fanstatus STRING
 ) WITH (
 	'connector.type'    	 = 'kafka',
 	'connector.version' 	 = 'universal',
-	'connector.topic'   	 = 'energy',
+	'connector.topic'   	 = 'global_sensor_events',
 	'connector.startup-mode' = 'earliest-offset',
 	'connector.properties.bootstrap.servers' = 'tspann-princeton0-cluster-0.general.fuse.l42.cloudera.com:9092',
 	'connector.properties.group.id' = 'flink-sql-global-sensor_join',
