@@ -1,9 +1,13 @@
+clear
 cd /opt/demo
 yum -y install git
 git clone https://github.com/tspannhw/meetup-sensors
 git clone https://github.com/tspannhw/FlinkSQLDemo
-chmod -R 777 /opt/demo/FlinkSQLDemo/*.sh
-chmod -R 777 /opt/demo/meetup-sensors/*.sh
+
+chmod -R 777 /opt/demo/FlinkSQLDemo
+chmod -R 777 /opt/demo/meetup-sensors
+
+/opt/demo/FlinkSQLDemo/sethdfspermissions.sh
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server tspann-princeton0-cluster-0.general.fuse.l42.cloudera.com:9092 --replication-factor 1 --partitions 1 --topic global_sensor_events
 
@@ -11,8 +15,9 @@ chmod -R 777 /opt/demo/meetup-sensors/*.sh
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server tspann-princeton0-cluster-0.general.fuse.l42.cloudera.com:9092 --replication-factor 1 --partitions 1 --topic scada
 
-/opt/demo/FlinkSQLDemo/sethdfspermissions.sh
+
 /opt/demo/FlinkSQLDemo/buildyarnsession.sh
+
 /opt/demo/FlinkSQLDemo/startsqlclient.sh
 
 show catalogs;
