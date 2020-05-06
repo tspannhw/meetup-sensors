@@ -1,14 +1,18 @@
 beeline
 
 CREATE EXTERNAL TABLE kafka_table
-  (`timestamp` timestamp , `page` string,  `newPage` boolean, 
-  added int, deleted bigint, delta double)
+  (`uuid` STRING, `systemtime` STRING , `temperaturef` STRING , `pressure` DOUBLE,`humidity` DOUBLE, `lux` DOUBLE, `proximity` int, `oxidising` DOUBLE , `reducing` DOUBLE, `nh3` DOUBLE , `gasko` STRING,`current` INT, `voltage` INT ,`power` INT, `total` INT,`fanstatus` STRING)
   STORED BY 'org.apache.hadoop.hive.kafka.KafkaStorageHandler'
   TBLPROPERTIES
   ("kafka.topic" = "global_sensor_eventsCluster", 
   "kafka.bootstrap.servers"="tspann-princeton0-cluster-0.general.fuse.l42.cloudera.com:9092");
 
 show tables;
+
+describe extended kafka_table;
+
+select *, __partition, __offset, __timestamp
+from kafka_table;
 
 !exit
 
@@ -18,3 +22,6 @@ show tables;
 Send a test
 
 CTRL-D
+
+
+SEE:   https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.1.5/integrating-hive/content/hive_kafka_query_table.html
