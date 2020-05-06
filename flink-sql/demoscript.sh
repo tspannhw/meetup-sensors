@@ -161,8 +161,25 @@ FROM energy,
 WHERE
     scada.systemtime = energy.systemtime;
 
+show tables;
+
+# then query then Quit
+
 select * from energy;
 
 select * from scada;
 
 select * from global_sensor_events;
+
+# when done
+
+drop table energy;
+
+drop table scada;
+
+drop table global_sensor_events;
+
+# exit
+
+exit;
+
