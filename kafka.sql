@@ -11,7 +11,7 @@ show tables;
 
 describe extended kafka_table;
 
-select *, __partition, __offset, __timestamp
+select *
 from kafka_table;
 
 !exit
