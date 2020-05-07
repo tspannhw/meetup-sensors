@@ -4,7 +4,7 @@ CREATE EXTERNAL TABLE kafka_table
   (`uuid` STRING, `systemtime` STRING , `temperaturef` STRING , `pressure` DOUBLE,`humidity` DOUBLE, `lux` DOUBLE, `proximity` int, `oxidising` DOUBLE , `reducing` DOUBLE, `nh3` DOUBLE , `gasko` STRING,`current` INT, `voltage` INT ,`power` INT, `total` INT,`fanstatus` STRING)
   STORED BY 'org.apache.hadoop.hive.kafka.KafkaStorageHandler'
   TBLPROPERTIES
-  ("kafka.topic" = "global_sensor_eventsCluster", 
+  ("kafka.topic" = "global_sensor_events", 
   "kafka.bootstrap.servers"="tspann-princeton0-cluster-0.general.fuse.l42.cloudera.com:9092");
 
 show tables;
