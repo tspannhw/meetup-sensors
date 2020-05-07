@@ -1,0 +1,4 @@
+{"uuid":"rpi4_uuid_rja_20200507175102","systemtime":"05/07/2020 13:51:03","temperaturef":"93.2","pressure":1005.0,"humidity":6.1,"lux":59.0,"proximity":0,"oxidising":50.8,"reducing":244.5,"nh3":111.8,"gasko":null,"current":0,"voltage":122,"power":0,"total":0,"fanstatus":"OFF"}
+
+{"uuid":"rpi4_uuid_eac_20200507175136","systemtime":"05/07/2020 13:51:38","temperaturef":"93.5","pressure":1005.0,"humidity":5.9,"lux":59.0,"proximity":0,"oxidising":50.9,"reducing":243.0,"nh3":111.4,"gasko":null,"current":0,"voltage":122,"power":0,"total":0,"fanstatus":"OFF"}
+
