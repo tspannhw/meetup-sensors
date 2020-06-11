@@ -1,0 +1,3 @@
+- name: kudu
+    type: kudu
+    kudu.masters:  edge2ai-1.dim.local:7051
