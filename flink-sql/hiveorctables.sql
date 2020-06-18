@@ -1,0 +1,1 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS global_sensor_events (uuid STRING, systemtime STRING, temperaturef STRING, pressure DOUBLE, humidity DOUBLE, lux DOUBLE, proximity BIGINT, oxidising DOUBLE, reducing DOUBLE, nh3 DOUBLE, gasko STRING, current BIGINT, voltage BIGINT, power BIGINT, total BIGINT, fanstatus STRING) STORED AS ORC
