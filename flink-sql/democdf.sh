@@ -11,10 +11,9 @@ chmod -R 777 /opt/demo/meetup-sensors
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic global_sensor_events
 
-/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092--replication-factor 1 --partitions 1 --topic energy
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic energy
 
 /opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
-
 
 /opt/demo/FlinkSQLDemo/buildyarnsession.sh
 
