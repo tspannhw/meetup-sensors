@@ -21,7 +21,11 @@ chmod -R 777 /opt/demo/meetup-sensors
 
 show catalogs;
 
+use catalog registry;
+
 show tables;
+
+describe test3;
 
 CREATE TABLE global_sensor_events (
  uuid STRING, 
