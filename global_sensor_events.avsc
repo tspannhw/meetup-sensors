@@ -17,31 +17,31 @@
   },
   {
    "name": "pressure",
-   "type": "double"
+   "type": ["double","null"]
   },
   {
    "name": "humidity",
-   "type": "double"
+   "type": ["double","null"]
   },
   {
    "name": "lux",
-   "type": "double"
+   "type": ["double","null"]
   },
   {
    "name": "proximity",
-   "type": "int"
+   "type": ["int","null"]
   },
   {
    "name": "oxidising",
-   "type": "double"
+   "type": ["double","null"]
   },
   {
    "name": "reducing",
-   "type": "double"
+   "type": ["double","null"]
   },
   {
    "name": "nh3",
-   "type": "double"
+   "type": ["double","null"]
   },
     {
    "name": "gasko",
@@ -49,19 +49,19 @@
   },
     {
    "name": "current",
-   "type": "int"
+   "type": ["int","null"]
   },
     {
    "name": "voltage",
-   "type": "int"
+   "type": ["int","null"]
   },
     {
    "name": "power",
-   "type": "int"
+   "type": ["int","null"]
   },
     {
    "name": "total",
-   "type": "int"
+   "type": ["int","null"]
   }
   ,
   {
