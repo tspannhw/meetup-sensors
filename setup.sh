@@ -169,7 +169,7 @@ CREATE TABLE energy (
 	'connector.startup-mode' = 'earliest-offset',
 	'connector.properties.bootstrap.servers' = 'edge2ai-1.dim.local:9092',
 	'connector.properties.group.id' = 'flink-sql-energy-consumer',
-	'format.type' = 'avro'
+	'format.type' = 'json'
 );
 
 
