@@ -1,5 +1,6 @@
 
-# No Kerberos 
+# No Kerberos
+# https://docs.cloudera.com/csa/1.2.0/flink-sql-table-api/topics/csa-kafka-avro.html
 
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /user/admin
 HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /user/root
@@ -116,7 +117,94 @@ fanstatus STRING
 	'connector.startup-mode' = 'earliest-offset',
 	'connector.properties.bootstrap.servers' = 'edge2ai-1.dim.local:9092',
 	'connector.properties.group.id' = 'flink-sql-global-sensor-join',
-	'format.type' = 'avro'
+	'format.type' = 'avro',
+	'format.avro-schema' =
+  	'{
+ "type": "record",
+ "name": "global_sensor_events",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "systemtime",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "temperaturef",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "pressure",
+   "type": "double"
+  },
+  {
+   "name": "humidity",
+   "type": "double"
+  },
+  {
+   "name": "lux",
+   "type": "double"
+  },
+  {
+   "name": "proximity",
+   "type": "int"
+  },
+  {
+   "name": "oxidising",
+   "type": "double"
+  },
+  {
+   "name": "reducing",
+   "type": "double"
+  },
+  {
+   "name": "nh3",
+   "type": "double"
+  },
+  {
+   "name": "gasko",
+   "type": [
+    "string",
+    "null"
+   ]
+  },
+  {
+   "name": "current",
+   "type": "int"
+  },
+  {
+   "name": "voltage",
+   "type": "int"
+  },
+  {
+   "name": "power",
+   "type": "int"
+  },
+  {
+   "name": "total",
+   "type": "int"
+  },
+  {
+   "name": "fanstatus",
+   "type": [
+    "string",
+    "null"
+   ]
+  }
+ ]
+}'
 );
 
 CREATE TABLE energy (
