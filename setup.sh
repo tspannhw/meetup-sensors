@@ -91,7 +91,7 @@ curl -k -u admin:supersecret1 --location --request POST 'http://ec2-52-54-225-47
 }'
 
 
-
+# instead of creating tables, let's build them in the registry
 
 CREATE TABLE global_sensor_events (
  uuid STRING, 
