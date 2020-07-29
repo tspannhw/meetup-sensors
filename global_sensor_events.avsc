@@ -1,0 +1,83 @@
+
+ DOUBLE , 
+ DOUBLE, 
+ DOUBLE , 
+ STRING,
+`` INT, 
+ INT ,
+`` INT,
+`` INT,
+ STRING
+
+{
+ "type": "record",
+ "name": "global_sensor_events",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": ["string","null"]
+  },
+  {
+   "name": "systemtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "temperaturef",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pressure",
+   "type": "double"
+  },
+  {
+   "name": "humidity",
+   "type": "double"
+  },
+  {
+   "name": "lux",
+   "type": "double"
+  },
+  {
+   "name": "proximity",
+   "type": "int"
+  },
+  {
+   "name": "oxidising",
+   "type": "double"
+  },
+  {
+   "name": "reducing",
+   "type": "double"
+  },
+  {
+   "name": "nh3",
+   "type": "double"
+  },
+    {
+   "name": "gasko",
+   "type": ["string","null"]
+  },
+    {
+   "name": "current",
+   "type": "int"
+  },
+    {
+   "name": "voltage",
+   "type": "int"
+  },
+    {
+   "name": "power",
+   "type": "int"
+  },
+    {
+   "name": "total",
+   "type": "int"
+  }
+  ,
+  {
+   "name": "fanstatus",
+   "type": ["string","null"]
+  }
+ ]
+}
