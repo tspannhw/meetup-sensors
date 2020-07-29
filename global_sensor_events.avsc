@@ -1,14 +1,3 @@
-
- DOUBLE , 
- DOUBLE, 
- DOUBLE , 
- STRING,
-`` INT, 
- INT ,
-`` INT,
-`` INT,
- STRING
-
 {
  "type": "record",
  "name": "global_sensor_events",
