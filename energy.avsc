@@ -1,0 +1,121 @@
+{
+ "type": "record",
+ "name": "energy",
+ "namespace": "com.cloudera.data",
+ "fields": [
+  {
+   "name": "uuid",
+   "type": ["string","null"]
+  },
+  {
+   "name": "systemtime",
+   "type": ["string","null"]
+  },
+  {
+   "name": "temperaturef",
+   "type": ["string","null"]
+  },
+  {
+   "name": "pressure",
+   "type": ["double","null"]
+  },
+  {
+   "name": "humidity",
+   "type": ["double","null"]
+  },
+  {
+   "name": "lux",
+   "type": ["double","null"]
+  },
+  {
+   "name": "proximity",
+   "type": ["int","null"]
+  },
+  {
+   "name": "oxidising",
+   "type": ["double","null"]
+  },
+  {
+   "name": "reducing",
+   "type": ["double","null"]
+  },
+  {
+   "name": "nh3",
+   "type": ["double","null"]
+  },
+    {
+   "name": "gasko",
+   "type": ["string","null"]
+  },
+    {
+   "name": "current",
+   "type": ["int","null"]
+  },
+    {
+   "name": "voltage",
+   "type": ["int","null"]
+  },
+    {
+   "name": "power",
+   "type": ["int","null"]
+  },
+    {
+   "name": "total",
+   "type": ["int","null"]
+  }
+  ,
+  {
+   "name": "fanstatus",
+   "type": ["string","null"]
+  },
+    {
+   "name": "diskusage",
+   "type": ["string","null"]
+  }
+  
+ ]
+}
+
+
+uuid STRING, 
+	systemtime STRING,  
+        `current` INT, 
+	voltage INT, 
+	`power` INT, 
+	`total` INT, 
+	swver STRING, 
+	hwver STRING,
+	type STRING, 
+	model STRING, 
+	mac STRING, 
+	deviceId STRING, 
+	hwId STRING, 
+	fwId STRING, 
+	oemId STRING,
+	alias STRING, 
+	devname STRING, 
+	iconhash STRING, 
+	relaystate INT, 
+	ontime INT, 
+	activemode STRING, 
+	feature STRING, 
+	updating INT, 
+	rssi INT, 
+	ledoff INT, 
+	latitude INT, 
+	longitude INT, 
+	`day` INT, 
+	`index` INT, 
+	zonestr STRING, 
+	tzstr STRING, 
+	dstoffset INT, 
+	host STRING, 
+	currentconsumption INT, 
+	devicetime STRING, 
+	ledon STRING, 
+	fanstatus STRING, 
+	`end` STRING, 
+	te STRING, 
+	cpu INT, 
+	memory INT, 
+	 STRING
