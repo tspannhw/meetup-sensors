@@ -19,6 +19,12 @@ HADOOP_USER_NAME=hdfs hdfs dfs -mkdir /tmp/sensorevents/
 HADOOP_USER_NAME=hdfs hdfs dfs -chmod -R 777 /tmp/sensorevents/
 HADOOP_USER_NAME=hdfs hdfs dfs -chown kafka:kafka /tmp/sensorevents/
 
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic global_sensor_events
+
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic energy
+
+/opt/cloudera/parcels/CDH/bin/kafka-topics --create --bootstrap-server edge2ai-1.dim.local:9092 --replication-factor 1 --partitions 1 --topic scada
+
 impala-shell -i ec2-52-54-225-47.compute-1.amazonaws.com -d default -f kudu.sql 
 
 curl -k -u admin:supersecret1 --location --request POST 'http://ec2-52-54-225-47.compute-1.amazonaws.com:31000/api/atlas/v2/types/typedefs' \
